@@ -538,6 +538,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1383835341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383835339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3cc299ddb930f49b895489fed601c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1735423174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -589,6 +601,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 898b29c79a282064ea0fa18ea67ec5e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8aa08b56a40bba4469f9658b6789b8a5, type: 2}
     - target: {fileID: 919132149155446097, guid: 898b29c79a282064ea0fa18ea67ec5e6, type: 3}
       propertyPath: m_Name
       value: CoinCollectable
