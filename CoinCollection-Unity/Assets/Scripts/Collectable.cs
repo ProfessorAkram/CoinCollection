@@ -17,18 +17,13 @@ public class Collectable : MonoBehaviour
     /***VARIABLES***/
     static public int collectableCount; //counts the number of colletables in the scene
 
-    // Start is called before the first frame update
-    void Start()
+    // Awake is called on instantiation before Start
+    void Awake()
     {
         collectableCount++; //add to collectable
         Debug.Log("Number of Colletables " + collectableCount);
-    }//end Start()
+    }//end Awake()
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }//end Update()
 
     //Called when a GameObject collides with another GameObject
     private void OnTriggerEnter(Collider other)
@@ -37,6 +32,8 @@ public class Collectable : MonoBehaviour
 
         if(other.tag == "Player")
         {
+            other.GetComponent<Collection>().AddToCollection(); //call method on the Collection component of other object
+
             Destroy(gameObject); //destroy this gameObject (collectable object)
         }
 
