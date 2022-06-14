@@ -25,11 +25,14 @@ public class Collection : MonoBehaviour
     public bool hasCollectedAll = false; //have all collectables been collected
 
     private int collectablesInCollection = 0; //number of collectables collected by player
+    private Timer timer; //reference to level timer
 
 
     // Start is called before the first frame update
     void Start()
     {
+        timer = Timer.LevelTimer; //reference the level timer
+
         //if we are using the collectable count
         if(useCollectableCount)
         {
@@ -47,6 +50,10 @@ public class Collection : MonoBehaviour
         if(collectablesInCollection == winCollectAmount)
         {
             hasCollectedAll = true;
+            
+            //if timer exsist, stop timer
+            if (timer != null) timer.timerStoped = true; 
+
             Debug.Log("You win!");
         }
 
