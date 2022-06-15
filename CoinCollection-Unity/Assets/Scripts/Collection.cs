@@ -52,7 +52,7 @@ public class Collection : MonoBehaviour
             hasCollectedAll = true;
             
             //if timer exsist, stop timer
-            if (timer != null) timer.timerStoped = true; 
+            if (timer != null) timer.timerStopped = true; 
 
             Debug.Log("You win!");
         }

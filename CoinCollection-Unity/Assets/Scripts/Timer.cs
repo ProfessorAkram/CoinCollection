@@ -42,7 +42,7 @@ public class Timer : MonoBehaviour
     private float currentTime; //current time of timer
 
     [HideInInspector]
-    public bool timerStoped = false; //check if timer is stoped
+    public bool timerStopped = false; //check if timer is stopped
 
 
     // Awake is called on instantiation before Start
@@ -56,9 +56,8 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer = Timer.LevelTimer; //find the level timer
         currentTime = startTime; //set the current time to the startTime specified
-}
+    }//end Start()
 
     // Update is called once per frame
     void Update()
@@ -70,7 +69,7 @@ public class Timer : MonoBehaviour
     //Runs the timer countdown
     private void RunTimer()
     {
-        if (timerStoped)
+        if (timerStopped)
         { // check to see if timer has stoped
             LevelEnd();
         }
@@ -84,7 +83,7 @@ public class Timer : MonoBehaviour
             else
             {//if the timer is equal to or less than zero
                 currentTime = 0; //set time to zero
-                timerStoped = true; //stop the timer
+                timerStopped = true; //stop the timer
             }
 
             DisplayTime(currentTime); //call DisplayTime method to format time
