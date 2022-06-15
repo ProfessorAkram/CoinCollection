@@ -26,12 +26,12 @@ public class Timer : MonoBehaviour
         //Check if instnace is null
         if (timer == null)
         {
-            timer = this; //set gm to this gm of the game object
+            timer = this; //set timer to this timer of the game object
             Debug.Log(timer);
         }
-        else //else if gm is not null a Game Manager must already exsist
+        else //else if timer is not null a Timer must already exsist
         {
-            Destroy(this.gameObject); //In this case you need to delete this gm
+            Destroy(gameObject); //In this case you need to delete this timer (gameObject)
         }
     }//end CheckTimerIsInScene()
     #endregion
