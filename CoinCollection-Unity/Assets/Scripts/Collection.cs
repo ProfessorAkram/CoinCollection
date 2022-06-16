@@ -34,7 +34,7 @@ public class Collection : MonoBehaviour
         timer = Timer.LevelTimer; //reference the level timer
 
         //if we are using the collectable count
-        if(useCollectableCount)
+        if (useCollectableCount)
         {
             //set the win amount to the amout of collectables in the scene
             winCollectAmount = Collectable.collectableCount;
@@ -47,12 +47,12 @@ public class Collection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(collectablesInCollection == winCollectAmount)
+        if (collectablesInCollection == winCollectAmount)
         {
             hasCollectedAll = true;
-            
+
             //if timer exsist, stop timer
-            if (timer != null) timer.timerStopped = true; 
+            if (timer != null) { timer.timerStopped = true; }
 
             Debug.Log("You win!");
         }
@@ -67,5 +67,5 @@ public class Collection : MonoBehaviour
         Debug.Log("Collectable Added");
 
     }//end AddToCollection()
-
 }
+

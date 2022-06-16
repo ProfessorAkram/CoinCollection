@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bec177dc4fac9c48aadf37ddb72a164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 120
+  startTime: 2
   timerStopped: 0
 --- !u!1001 &135639748
 PrefabInstance:
