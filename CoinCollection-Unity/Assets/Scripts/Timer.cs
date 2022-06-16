@@ -81,12 +81,11 @@ public class Timer : MonoBehaviour
                 currentTime -= Time.deltaTime;
             }
             else
-            {//if the timer is equal to or less than zero
+            {//if the timer is less than zero
                 currentTime = 0; //set time to zero
                 timerStopped = true; //stop the timer
             }
 
-            DisplayTime(currentTime); //call DisplayTime method to format time
             Debug.Log(DisplayTime(currentTime));
 
         }
@@ -94,9 +93,9 @@ public class Timer : MonoBehaviour
     }//end RunTimer();
 
     //Formats time as string
-    string DisplayTime(float timeToDispaly)
+   private string DisplayTime(float timeToDispaly)
     {
-        timeToDispaly += 1; //adds 1 to time, to accuratly refelect time in field
+       timeToDispaly += 1; //adds 1 to time, to accuratly refelect time in field
 
         float minutes = Mathf.FloorToInt(timeToDispaly / 60); //calculate timer mintues
         float seconds = Mathf.FloorToInt(timeToDispaly % 60); //calculate timer seconds
