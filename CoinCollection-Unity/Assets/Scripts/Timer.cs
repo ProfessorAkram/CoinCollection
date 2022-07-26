@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
     static private Timer timer; //refence GameManager
     static public Timer LevelTimer { get { return timer; } } //public access to read only timer 
 
-    //Check to make sure only one gm of the GameManager is in the scene
+    //Check to make sure only one Timer is in the scene
     void CheckTimerIsInScene()
     {
 
@@ -35,7 +35,9 @@ public class Timer : MonoBehaviour
         }
     }//end CheckTimerIsInScene()
     #endregion
-    
+
+    GameManager gm;
+
     [Tooltip("Start time in seconds")]
     public float startTime = 10f; //time for level (if level is timed)
 
@@ -50,6 +52,8 @@ public class Timer : MonoBehaviour
     {
         //runs the method to check for the GameManager
         CheckTimerIsInScene();
+
+        gm = GameManager.GM;
     }//end Awake()
 
 
@@ -86,7 +90,7 @@ public class Timer : MonoBehaviour
                 timerStopped = true; //stop the timer
             }
 
-            Debug.Log(DisplayTime(currentTime));
+            gm.Timer = DisplayTime(currentTime);
 
         }
 
@@ -108,6 +112,7 @@ public class Timer : MonoBehaviour
     private void LevelEnd()
     {
         Debug.Log("level end");
+        gm.SetTargetState(GameState.gameLevelEnded);
 
     }//end LevelEnd()
 
